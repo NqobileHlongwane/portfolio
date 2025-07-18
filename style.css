@@ -164,3 +164,47 @@ html {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   text-align: left;
 }
+/* Make images scale within their containers */
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container that adapts to screen size */
+.projects-section {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flexbox or grid for layout */
+.project-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Text info takes full width on small screens */
+.project-info {
+  flex: 1 1 300px;
+}
+
+/* Add basic responsive typography */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-info {
+    text-align: center;
+  }
+}
