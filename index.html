@@ -6,29 +6,377 @@
   <title>Nqobile Hlongwane - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f5f5f5;
+    }
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 10px;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #14046d;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #8913ad;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+    .profile-pic {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #005e99;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn i {
+  margin-right: 8px;
+}
+
+.project-btn:hover {
+  background-color: #005e99;
+}
+.underline {
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#skills ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.education-card {
+  background-color: #f9f9f9;
+  border-left: 5px solid #007acc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #007acc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.education-card i {
+  color: #005e99;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge.distinction {
+  background-color: #d1f2eb;
+  color: #117864;
+}
+
+.badge.achievement {
+  background-color: #fdebd0;
+  color: #af601a;
+}
+.provider-block {
+  margin-bottom: 40px;
+}
+
+.provider-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.provider-logo {
+  height: 40px;
+  width: auto;
+}
+
+.certification-card {
+  background-color: #f9f9f9;
+  border-left: 5px solid #007acc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+}
+
+.certification-card h4 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #007acc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.certification-card i {
+  color: #005e99;
+}
+
+.cert-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cert-btn:hover {
+  background-color: #005e99;
+}
+.experience-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.collapse-toggle {
+  background-color: #2e86de;
+  color: #fff;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.company-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 2px;
+}
+
+.collapse-content {
+  padding: 15px;
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.experience-card ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style: disc;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scaleY(0.9); }
+  to { opacity: 1; transform: scaleY(1); }
+}
+
+
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <div class="nav-container">
-      <h1 class="logo">Nqobile Hlongwane</h1>
-      
-       <nav>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="skills.html">Skills</a>
-  <a href="education.html">Education</a>
-  <a href="certifications.html">Certifications</a>
-  <a href="experience.html">Experience</a>
-  <a href="contacts.html">Contacts</a>
-  <!-- the rest remain -->
-</nav>
-         
-      </nav>
-    </div>
-  </header>
+  <div class="nav-container">
+    <h1 class="logo">Nqobile Hlongwane</h1>
+    <nav>
+      <a href="#about">About</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">View ▾</button>
+        <div class="dropdown-content">
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#projects">Projects</a>
+          <a href="#references">References</a>
+        </div>
+      </div>
+
+      <a href="#contacts">Contacts</a>
+    </nav>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="hero">
@@ -37,13 +385,270 @@
     <p class="title">Diploma in Information Technology Software Development<br>Aspiring IT Professional</p>
   </section>
 
+  <!-- About Section -->
+  <section id="about">
+    <h2>About</h2>
+      <p>
+      I'm Nqobile Hlongwane, an enthusiastic IT graduate from Tshwane University of Technology with a passion for full-stack development.
+    </p>
+    <p>
+      I grew up in Phola township and developed my skills through projects, volunteering, and hands-on experience. My goal is to use technology to solve real-world problems and help others learn through tech.
+    </p>
+    <p>
+      I’ve built real-world applications, like an LMS for managing online education, and continue to grow my knowledge in AI, cloud, and web technologies.
+    </p>
+  </div>
+
+  <!-- Projects Section -->
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <h3>Learning Management System</h3>
+      <p>
+        A custom-built LMS that enables teachers to upload assignments with attachments, manage student groups, and review learner submissions. 
+        Learners can view assignments, download files, and submit their work directly through the system.
+      </p>
+      <a href="https://github.com/NqobileHlongwane/AfterCare-LMS" target="_blank" class="project-btn">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>
+        A custom-built personal portfolio that showcases my work, education, skills, and certifications.
+      </p>
+      <a href="https://github.com/NqobileHlongwane/portfolio" target="_blank" class="project-btn">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+    </div>
+
+    <!-- more project cards below this -->
+
+  </div>
+</section>
 
 
+
+  <!-- Skills Section -->
+  <section id="skills">
+  <h2>Skills</h2>
+
+  <h3 class="underline">Programming</h3>
+  <ul>
+    <li>C++</li>
+    <li>C#</li>
+    <li>Java</li>
+    <li>Python</li>
+    <li>JavaScript</li>
+    <li>PHP</li>
+    <li>UX/UI</li>
+  </ul>
+
+  <h3 class="underline">Web</h3>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Node.js</li>
+    <li>XAMPP</li>
+  </ul>
+
+  <h3 class="underline">Databases</h3>
+  <ul>
+    <li>MySQL</li>
+  </ul>
+
+  <h3 class="underline">Tools & Platforms</h3>
+  <ul>
+    <li>Visual Studio Code</li>
+    <li>Git</li>
+    <li>Azure</li>
+    <li>Packet Tracer</li>
+    <li>Jupyter Notebook</li>
+    <li>Canva</li>
+    <li>GitHub</li>
+  </ul>
+
+  <h3 class="underline">Operating Systems</h3>
+  <ul>
+    <li>Windows</li>
+    <li>Linux</li>
+  </ul>
+
+  <h3 class="underline">Office</h3>
+  <ul>
+    <li>Microsoft Word</li>
+    <li>Excel</li>
+    <li>PowerPoint</li>
+    
+  </ul>
+</section>
+
+
+
+  <!-- Education Section -->
+  <section id="education">
+  <h2>Education</h2>
+
+  <div class="education-list">
+
+    <div class="education-card">
+      <h3><i class="fas fa-graduation-cap"></i> National Diploma in Information Technology</h3>
+      <p><strong>Institution:</strong> Tshwane University of Technology</p>
+      <p><strong>Years:</strong> 2019 – 2022</p>
+      <p><strong>Focus:</strong> Software Development, Databases, Networking, Web Programming</p>
+      
+    </div>
+
+    <div class="education-card">
+      <h3><i class="fas fa-school"></i> National Senior Certificate (Matric)</h3>
+      <p><strong>Institution:</strong> Mabande C High School</p>
+      <p><strong>Year:</strong> 2018</p>
+      <span class="badge achievement">Top 10 Academic Performer</span>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="certifications">
+  <h2>Certifications</h2>
+
+  <!-- Microsoft Certifications -->
+  <div class="provider-block">
+    <div class="provider-header">
+      <img src="images/microsoft-logo.jpeg" alt="Microsoft Logo" class="provider-logo" />
+      <h3>Microsoft Certifications</h3>
+    </div>
+
+    <div class="certification-card">
+      <h4><i class="fas fa-certificate"></i> Azure AI Fundamentals</h4>
+      <p>Certified in the foundational knowledge of AI and Azure services.</p>
+      <a href="https://learn.microsoft.com/api/credentials/share/en-us/NqobileHlongwane-3910/1A1E1C27AA4D6967?sharingId=2D0400F434E94B4" target="_blank" class="cert-btn">
+        View on Microsoft Learn
+      </a>
+    </div>
+
+    <div class="certification-card">
+      <h4><i class="fas fa-certificate"></i> Azure AI Engineer Associate</h4>
+      <p>Advanced skills in developing and deploying AI solutions using Azure services.</p>
+      <a href="https://learn.microsoft.com/api/credentials/share/en-us/NqobileHlongwane-3910/128903D6D0A686D4?sharingId=2D0400F434E94B4" target="_blank" class="cert-btn">
+        View on Microsoft Learn
+      </a>
+    </div>
+  </div>
+
+  <!-- IBM Certifications -->
+  <div class="provider-block">
+    <div class="provider-header">
+      <img src="images/ibm-logo.jpeg" alt="IBM Logo" class="provider-logo" />
+      <h3>IBM Certifications</h3>
+    </div>
+
+    <div class="certification-card">
+      <h4><i class="fas fa-certificate"></i> Python 101 for Data Science</h4>
+      <p>Introduction to Python programming for data science, including functions, loops, and libraries.</p>
+      <a href="https://courses.cognitiveclass.ai/certificates/e91afd114bd347fe83110407737d56fe" target="_blank" class="cert-btn">
+        View on IBM
+      </a>
+    </div>
+
+    <div class="certification-card">
+      <h4><i class="fas fa-certificate"></i> Machine Learning with Python</h4>
+      <p>Hands-on training in machine learning concepts using Python, including regression, clustering, and classification.</p>
+      <a href="https://courses.cognitiveclass.ai/certificates/f7d5579828a240e3bd75850bba795eb0" target="_blank" class="cert-btn">
+        View on IBM
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Experience Section -->
+ <section id="experience">
+  <h2>Experience</h2>
+
+  <!-- Experience Card 1 -->
+  <div class="experience-card">
+    <button class="collapse-toggle">
+      <img src="images/investhood-logo.jpeg" alt="Investhood Logo" class="company-logo" />
+      <span>Software Development Intern — Investhood IT (2024)</span>
+    </button>
+    <div class="collapse-content">
+      <ul>
+        <li>Web app design and development</li>
+        <li>Testing and debugging</li>
+        <li>Team collaboration and version control</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Experience Card 2 -->
+  <div class="experience-card">
+    <button class="collapse-toggle">
+      <img src="images/netcampus-logo.png" alt="Netcampus Logo" class="company-logo" />
+      <span>AI Engineer Volunteer — Netcampus Group (2025 – Present)</span>
+    </button>
+    <div class="collapse-content">
+      <ul>
+        <li>Worked on AI-based solutions using Microsoft Azure</li>
+        <li>Trained peers and community members in AI and emerging technologies</li>
+        <li>Contributed to the design and testing of AI workflows</li>
+      </ul>
+    </div>
+  </div>
+
+<div class="experience-card">
+    <button class="collapse-toggle">
+      <img src="images/health-Logo.jpg" alt="Investhood Logo" class="company-logo" />
+      <span>CCTV Surveillance Intern - Dept.of Health-Empumelelweni CHC (2024-2025)</span>
+    </button>
+    <div class="collapse-content">
+      <ul>
+        <li>Monitoring footage</li>
+        <li>Recording and storing</li>
+        <li>Responding to emergencies</li>
+        <li>Reporting incidents</li>
+      </ul>
+    </div>
+  </div>
+</section>
+  <!-- Contact Section -->
+  <section id="contacts">
+    <h2>Contact</h2>
+  <div class="contact-info">
+    <h3>Email</h3>
+    <p><a href="mailto: nqobilehlongwane708@gmail.com">nqobilehlongwane708@gmail.com</a></p>
+    <h3>Phone</h3>
+    <p><a href="tel:+27761309839">+27 761 309 839</a></p>
+    <h3>LinkedIn</h3>
+    <p><a href="https://www.linkedin.com/in/nqobile-hlongwane">Nqobile Hlongwane</a></p>
+    <h3>GitHub</h3>
+    <p><a href="https://github.com/NqobileHlongwane">NqobileHlongwane</a></p>
+  </div>
+  </section>
+
+  <!-- References Section -->
+  <section id="references">
+    <h2>References</h2>
+    <p>Available upon request.</p>
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Nqobile Hlongwane. All rights reserved.</p>
   </footer>
+<script>
+  document.querySelectorAll(".collapse-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 
 </body>
 </html>
+
 
