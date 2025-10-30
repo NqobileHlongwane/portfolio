@@ -114,14 +114,19 @@
   background-color: #005e99;
 }
 .project-grid {
-  display: grid;
-  grid-auto-flow: rows; /* items go left to right */
-  grid-auto-rows: minmax(300px, 1fr); /* each item’s width */
-  gap: 30px;
-  justify-content: start; /* align items to the left */
+  display: flex;
+  flex-wrap: wrap;          /* Wraps to next line if needed */
+  gap: 30px;                /* Space between paragraphs */
+  justify-content: flex-start; /* Left-align the text */
   margin-top: 30px;
 }
-
+.project-grid p {
+  margin: 0;                /* Removes default paragraph spacing */
+  font-size: 1.1rem;
+  background: #f5f5f5;      /* Optional: light background for visibility */
+  padding: 10px 20px;       /* Optional: breathing room */
+  border-radius: 6px;       /* Optional: rounded look */
+}
 
 
 .project-card {
@@ -408,7 +413,6 @@
   <h2>Projects</h2>
   <div class="project-grid">
 
-    <div class="project-card">
       <h3>Learning Management System</h3>
       <p>
         A custom-built LMS that enables teachers to upload assignments with attachments, manage student groups, and review learner submissions. 
@@ -419,7 +423,7 @@
       </a>
     </div>
 
-    <div class="project-card">
+    
       <h3>Portfolio Website</h3>
       <p>
         A custom-built personal portfolio that showcases my work, education, skills, and certifications.
@@ -654,6 +658,7 @@
 
 </body>
 </html>
+
 
 
 
