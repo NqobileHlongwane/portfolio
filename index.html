@@ -115,10 +115,13 @@
 }
 .project-grid {
   display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(300px, auto));
+  grid-auto-flow: column; /* items go left to right */
+  grid-auto-columns: minmax(300px, 1fr); /* each item’s width */
   gap: 30px;
+  justify-content: start; /* align items to the left */
   margin-top: 30px;
 }
+
 
 
 .project-card {
@@ -651,6 +654,7 @@
 
 </body>
 </html>
+
 
 
 
