@@ -252,6 +252,17 @@ img {
 }
 
 /* ===== SKILLS =====*/
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skills-table td {
+  padding: 20px;
+  vertical-align: top;
+}
+
+
 .skills__container {
   row-gap: 2rem;
   text-align: center;
@@ -306,6 +317,8 @@ img {
 .skills__img {
   border-radius: 0.5rem;
 }
+
+
 
 
 
