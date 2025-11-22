@@ -252,17 +252,6 @@ img {
 }
 
 /* ===== SKILLS =====*/
-.skills-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.skills-table td {
-  padding: 20px;
-  vertical-align: top;
-}
-
-
 .skills__container {
   row-gap: 2rem;
   text-align: center;
@@ -303,16 +292,16 @@ img {
   z-index: var(--z-back);
 }
 .skills__html {
-  width: 80%;
+  width: 95%;
 }
-.skills__css {
+.skills__nodejs {
   width: 85%;
 }
-.skills__js {
+.skills__typescript {
   width: 65%;
 }
-.skills__ux {
-  width: 75%;
+.skills__mysql {
+  width: 85%;
 }
 .skills__img {
   border-radius: 0.5rem;
